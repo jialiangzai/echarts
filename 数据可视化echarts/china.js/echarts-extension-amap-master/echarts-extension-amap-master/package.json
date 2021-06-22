@@ -1,0 +1,62 @@
+{
+  "name": "echarts-extension-amap",
+  "version": "1.9.5",
+  "description": "An AMap(https://lbs.amap.com) extension for Apache ECharts (https://github.com/apache/echarts)",
+  "main": "dist/echarts-extension-amap.min.js",
+  "module": "dist/echarts-extension-amap.esm.js",
+  "files": [
+    "dist",
+    "src",
+    "index.js",
+    "index.d.ts",
+    "export.js",
+    "export.d.ts",
+    "types.d.ts",
+    "examples/*.html"
+  ],
+  "types": "types.d.ts",
+  "scripts": {
+    "dev": "rollup -wc --environment NODE_ENV:development",
+    "build": "rollup -c --environment NODE_ENV:production && node build/post-build.js",
+    "release": "npm run build && npm run generate:example",
+    "generate:example": "node build/generateExamples.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plainheart/echarts-extension-amap.git"
+  },
+  "keywords": [
+    "echarts",
+    "amap",
+    "autonavi",
+    "echarts-extension",
+    "data-visualization",
+    "map",
+    "gaode",
+    "echarts-amap",
+    "echarts4",
+    "echarts5",
+    "amap-v2"
+  ],
+  "author": "plainheart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plainheart/echarts-extension-amap/issues"
+  },
+  "homepage": "https://github.com/plainheart/echarts-extension-amap#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "chalk": "^4.1.0",
+    "rollup": "^2.39.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  }
+}
